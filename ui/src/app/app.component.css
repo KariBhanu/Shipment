@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+h5{
+color: #fff;
+}
+h6{
+color:#fff;
+}

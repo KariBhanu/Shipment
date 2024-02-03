@@ -1,0 +1,19 @@
+.card{
+    width:500px;
+    height:auto;
+    box-shadow: 1px 1px #888888;
+}
+
+.button-group{
+    display: flex;
+    justify-content: right;
+}
+.reset-button{
+    margin-right: 10px;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
