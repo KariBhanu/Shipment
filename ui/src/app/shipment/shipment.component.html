@@ -1,1 +1,25 @@
-<p>shipment works!</p>
+<div class="wrapper-div">
+    <div class="navigation">
+        <div class="left-side">
+            <div class="back-button-wrapper">
+                <i class="fa fa-angle-left back-icon"></i>
+            </div>
+            <div class="vertical-line">
+            </div>
+            <div class="shipment-number-wrapper">
+                <h5 class="shipment-summary">{{title}}</h5>
+                <!-- <p class="shipment-number">LOWSHP154</p> -->
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="close-button-wrapper">
+                <button class="close-button btn btn-outline-primary">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    <app-results *ngIf="pageBool" [shipmentDetails]="shipmentDetails"
+        (shipmentdata)="shipmentCame($event)"></app-results>
+    <app-details *ngIf="!pageBool" [shipmentdata]="shipmentData"></app-details>
+</div>

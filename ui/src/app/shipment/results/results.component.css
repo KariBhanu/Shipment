@@ -1,0 +1,62 @@
+.results-wrapper{
+    height: 100%;
+}
+
+.shipment-card{
+    height: 8rem;
+    transition: 0.3s all ease;
+    cursor: pointer;
+}
+.shipment-card:hover{
+    background-color: rgba(211, 211, 211, 0.389);
+    transform:scale(1.01) ;
+}
+.card-wrapper{
+    display: flex;
+    justify-content:space-around;
+}
+.list-card{
+    display: flex;
+    flex-direction: column;
+}
+.list-card h6 {
+    margin-bottom: 1px;
+}
+.list-card p {
+    margin-bottom: 1px;
+}
+
+.filter-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.results-count{
+    display: flex;
+    align-items: baseline;
+}
+
+.count{
+    margin:0px 10px 0px 50px;
+}
+
+.filter-icon{
+    font-size: 2rem;
+    color: #20a8d8;
+}
+
+.results-list{
+    height: calc(100vh - 273px);
+    overflow: auto;
+}
+.results-list::-webkit-scrollbar{
+   display: none;
+}
+
+.shipment-id{
+    color: #20a8d8;
+}
+
+.status{
+    color: blueviolet;
+}

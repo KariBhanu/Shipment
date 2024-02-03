@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
+  @Input() shipmentdata: any;
+  constructor() { }
 
+  ngOnInit() {
+    console.log(this.shipmentdata)
+  }
 }

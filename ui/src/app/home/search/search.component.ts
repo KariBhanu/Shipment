@@ -10,40 +10,40 @@ import { SharedService } from '../../sharedservice.service';
 })
 export class SearchComponent implements OnInit {
 
-  searchForm:any;
-  constructor(private router: Router,private sharedService:SharedService){
+  searchForm: any;
+  constructor(private router: Router, private sharedService: SharedService) {
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.initSearchForm()
   }
 
-  initSearchForm(){
+  initSearchForm() {
     this.searchForm = new FormGroup({
-        orderId: new FormControl(''),
-        shipmentId: new FormControl(''),
-        firstName: new FormControl(''),
-        lastName: new FormControl(''),
-        emailId: new FormControl(''),
-        phoneNumber: new FormControl('')
-      });
+      orderId: new FormControl(''),
+      shipmentId: new FormControl(''),
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+      emailId: new FormControl(''),
+      phoneNumber: new FormControl('')
+    });
   }
-  reset(){
+  reset() {
     this.searchForm.patchValue({
-        orderId: '',
-            shipmentId: '',
-            firstName: '',
-            lastName: '',
-            emailId: '',
-            phoneNumber: ''
-      });
+      orderId: '',
+      shipmentId: '',
+      firstName: '',
+      lastName: '',
+      emailId: '',
+      phoneNumber: ''
+    });
   }
 
-  shipmentSearch(){
+  shipmentSearch() {
 
     this.sharedService.searchShipment = this.searchForm.value;
-    this.router.navigate(['/shipment'],{ queryParams: this.searchForm.value });
+    this.router.navigate(['/shipment'], { queryParams: { search: true } });
   }
 
 }

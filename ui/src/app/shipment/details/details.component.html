@@ -1,1 +1,124 @@
-<p>details works!</p>
+<div class="card">
+    <div class="card-body">
+        <div class="details-section">
+            <div class="vertical">
+                <div class="part-1">
+                    <div class="packing-in-progress">
+                        <label>
+                            Packing in Progress
+                        </label>
+                    </div>
+                    <div class="shipment-number">
+                        <label>
+                            Shipment number
+                        </label>
+                        <p>
+                            {{shipmentdata.ShipmentNo}}
+                        </p>
+                    </div>
+                    <div class="shipment-number">
+                        <label>
+                            Carrier
+                        </label>
+                        <p>
+                            {{shipmentdata.ScacAndService}}
+                        </p>
+                    </div>
+                    <div class="shipment-number">
+                        <label>
+                            Assigned to
+                        </label>
+                        <p>
+                            {{shipmentdata.AssignedToUserId}}
+                        </p>
+                    </div>
+                    <div class="shipment-number">
+                        <label>
+                            Ship to
+                        </label>
+                        <p>{{shipmentdata.ToAddress.FirstName}} {{shipmentdata.ToAddress.LastName}}</p>
+                        <p>{{shipmentdata.ToAddress.AddressLine1}}</p>
+                        <p>{{shipmentdata.ToAddress.City}}, {{shipmentdata.ToAddress.State}},
+                            {{shipmentdata.ToAddress.ZipCode}}</p>
+                        <p>{{shipmentdata.ToAddress.Country}}</p>
+                    </div>
+                </div>
+                <div class="part-2">
+                    <div class="expected-ship-date bottom">
+                        <label>Expected ship date</label>
+                        <p>{{shipmentdata.ExpectedShipmentDate}}</p>
+                    </div>
+                    <div class="customer-info bottom">
+                        <label>Customer info</label>
+                        <p>{{shipmentdata.BillToAddress.FirstName}} {{shipmentdata.BillToAddress.LastName}}</p>
+                        <p>{{shipmentdata.BillToAddress.DayPhone}}</p>
+                        <p>{{shipmentdata.BillToAddress.EMailID}}</p>
+                    </div>
+                    <div class="Bill to bottom">
+                        <label>Bill to</label>
+                        <p>{{shipmentdata.BillToAddress.FirstName}} {{shipmentdata.BillToAddress.LastName}}</p>
+                        <p>{{shipmentdata.BillToAddress.DayPhone}}</p>
+                        <p>{{shipmentdata.BillToAddress.EMailID}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal">
+                <div class="info-div">
+                    <div class="hide-show-info">
+                        <p>
+                            Hide info
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-main-div">
+            <div class="product-heading">
+                <h5>
+                    Products (3)
+                </h5>
+                <div class="horizontal-line">
+
+                </div>
+                <div class="products">
+                    <div class="prods prod-1">
+                        <div class="horizontal-div">
+                            <img alt="P1 Image">
+                            <div class="vertical-options">
+
+                                <h5>iRobot Roomba 980 VC</h5>
+                                <p>Product ID: 1000900</p>
+                                <p>Quantity: 1 Each</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="prods prod-2">
+                        <div class="horizontal-div">
+
+                            <img alt="P2 Image">
+                            <div class="vertical-options">
+
+                                <h5>Hunter Regalia</h5>
+                                <p>Product ID: 1000900</p>
+                                <p>Quantity: 1 Each</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prods prod-2">
+                        <div class="horizontal-div">
+
+                            <img alt="P2 Image">
+                            <div class="vertical-options">
+                                <h5>Frigidaire WIndow Ac</h5>
+                                <p>Product ID: 1000900</p>
+                                <p>Quantity: 1 Each</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
