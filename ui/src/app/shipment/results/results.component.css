@@ -1,62 +1,132 @@
-.results-wrapper{
+.results-wrapper {
     height: 100%;
+    overflow-x: hidden;
 }
 
-.shipment-card{
+.shipment-card {
     height: 8rem;
     transition: 0.3s all ease;
     cursor: pointer;
 }
-.shipment-card:hover{
+
+.shipment-card:hover {
     background-color: rgba(211, 211, 211, 0.389);
-    transform:scale(1.01) ;
+    transform: scale(1.01);
 }
-.card-wrapper{
+
+.card-wrapper {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
 }
-.list-card{
+
+.list-card {
     display: flex;
     flex-direction: column;
 }
+
 .list-card h6 {
     margin-bottom: 1px;
 }
+
 .list-card p {
     margin-bottom: 1px;
 }
 
-.filter-wrapper{
+.filter-wrapper {
     display: flex;
     justify-content: space-between;
+
 }
 
-.results-count{
+.results-count {
     display: flex;
     align-items: baseline;
 }
 
-.count{
-    margin:0px 10px 0px 50px;
+.count {
+    margin: 0px 10px 0px 50px;
 }
 
-.filter-icon{
+.filter-icon {
     font-size: 2rem;
     color: #20a8d8;
+    cursor: pointer;
 }
 
-.results-list{
+.results-list {
     height: calc(100vh - 273px);
     overflow: auto;
 }
-.results-list::-webkit-scrollbar{
-   display: none;
+
+.results-list::-webkit-scrollbar {
+    display: none;
 }
 
-.shipment-id{
+.shipment-id {
     color: #20a8d8;
 }
 
-.status{
+.status {
     color: blueviolet;
+}
+
+.filter-modal-main {
+    border: 1px solid rgba(128, 128, 128, 0.362);
+    background-color: white;
+    width: 30rem;
+    position: absolute;
+    z-index: 1000;
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+    right: 28rem;
+}
+
+.modal-header {
+    height: 3rem;
+    border-bottom: 3px solid rgba(128, 128, 128, 0.749);
+    padding: 8px;
+    color: rgb(99, 98, 98);
+}
+
+.modal-body {
+    padding: 13px;
+}
+
+.status-section {
+    background-color: rgba(128, 128, 128, 0.088);
+    padding: 13px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.677);
+    color: rgb(99, 98, 98);
+}
+
+.modal-footer {
+    height: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: white;
+    padding: 5px;
+}
+
+.modal-button {
+    margin-right: 10px;
+}
+
+.checkbox {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 10px;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.hr {
+    margin: 0;
 }

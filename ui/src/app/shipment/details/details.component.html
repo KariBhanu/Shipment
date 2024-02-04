@@ -127,8 +127,8 @@
                     {{shipmentdata.ShipmentLines.shipmentLine}}
                     <div class="prods prod-1" *ngFor="let product of shipmentdata.ShipmentLines.ShipmentLine">
                         <div class="horizontal-div">
-                            <img alt="P1 Image">
-                            <!-- <img src='{{product.OrderLine.ItemDetails.ImageUrl}}' alt="P1 Image"> -->
+                            <!-- <img src="../../../assets/pic.jpg" alt=""> -->
+                            <img src='{{product.OrderLine.ItemDetails.ImageUrl}}' alt="P1 Image">
                             <div class="vertical-options">
                                 <h5>{{product.OrderLine.ItemDetails.Description}}</h5>
                                 <p>Product ID: {{product.OrderLine.ItemDetails.ItemID}}</p>

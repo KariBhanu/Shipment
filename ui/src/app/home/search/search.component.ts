@@ -55,7 +55,6 @@ export class SearchComponent implements OnInit {
       );
     });
     this.sharedService.shipmentDetails.Shipments.TotalNumberOfRecords = String(this.sharedService.shipmentDetails.Shipments.Shipment.length);
-    console.log(this.sharedService.shipmentDetails, this.sharedService.shipmentDetailsCopy)
     this.router.navigate(['/shipment']);
   }
 

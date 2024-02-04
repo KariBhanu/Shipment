@@ -55,7 +55,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Frigidaire Window Air Conditioner 1200-BTU",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100001"
                   }
                 }
@@ -67,7 +67,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Hunter Regalia 60-in New Bronze Ceiling Fan",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100002 "
                   }
                 }
@@ -122,7 +122,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Frigidaire Window Air Conditioner 1200-BTU",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100001"
                   }
                 }
@@ -134,7 +134,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Hunter Regalia 60-in New Bronze Ceiling Fan",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100002 "
                   }
                 }
@@ -196,7 +196,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Frigidaire Window Air Conditioner 1200-BTU",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100001"
                   }
                 }
@@ -208,7 +208,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Hunter Regalia 60-in New Bronze Ceiling Fan",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100002 "
                   }
                 }
@@ -263,7 +263,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Frigidaire Window Air Conditioner 1200-BTU",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100001"
                   }
                 }
@@ -275,7 +275,7 @@ export class SharedService {
                   "ItemDetails": {
                     "DisplayUnitOfMeasure": "Each",
                     "Description": "Hunter Regalia 60-in New Bronze Ceiling Fan",
-                    "ImageUrl": "<PATH_TO_IMAGE>",
+                    "ImageUrl": "../../../assets/pic.jpg",
                     "ItemID": "100002 "
                   }
                 }

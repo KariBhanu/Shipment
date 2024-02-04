@@ -109,3 +109,9 @@ label{
     display: flex;
     justify-content: space-between;
 }
+
+img{
+    height: 7rem;
+    width:7rem;
+    margin-right: 20px;
+}
