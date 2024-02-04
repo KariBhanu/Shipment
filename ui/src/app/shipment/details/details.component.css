@@ -5,6 +5,13 @@
     flex-direction: column;
     background-color: rgba(128, 128, 128, 0.216);
 }
+.show-details-section {
+    /* margin: 10px 10px; */
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.216);
+}
 
 .hide-show-info {
     float: right;
@@ -96,4 +103,9 @@ label{
 
 .vertical-options p{
     color: black;
+}
+
+.show-part-2{
+    display: flex;
+    justify-content: space-between;
 }

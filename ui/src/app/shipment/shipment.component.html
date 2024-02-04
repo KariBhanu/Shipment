@@ -2,7 +2,7 @@
     <div class="navigation">
         <div class="left-side">
             <div class="back-button-wrapper">
-                <i class="fa fa-angle-left back-icon"></i>
+                <i class="fa fa-angle-left back-icon" (click)="goBack()"></i>
             </div>
             <div class="vertical-line">
             </div>
@@ -13,7 +13,7 @@
         </div>
         <div class="right-side">
             <div class="close-button-wrapper">
-                <button class="close-button btn btn-outline-primary">
+                <button class="close-button btn btn-outline-primary" (click)="close()">
                     Close
                 </button>
             </div>

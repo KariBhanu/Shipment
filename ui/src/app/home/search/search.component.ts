@@ -16,33 +16,46 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.initSearchForm()
+    this.initSearchForm();
+    this.sharedService.shipmentDetails = JSON.parse(JSON.stringify(this.sharedService.shipmentDetailsCopy));
   }
 
   initSearchForm() {
     this.searchForm = new FormGroup({
-      orderId: new FormControl(''),
-      shipmentId: new FormControl(''),
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
-      emailId: new FormControl(''),
-      phoneNumber: new FormControl('')
+      OrderNo: new FormControl(''),
+      ShipmentNo: new FormControl(''),
+      FirstName: new FormControl(''),
+      LastName: new FormControl(''),
+      EmailId: new FormControl(''),
+      Phonenumber: new FormControl('')
     });
   }
   reset() {
     this.searchForm.patchValue({
-      orderId: '',
-      shipmentId: '',
-      firstName: '',
-      lastName: '',
-      emailId: '',
-      phoneNumber: ''
+      OrderNo: '',
+      ShipmentNo: '',
+      FirstName: '',
+      LastName: '',
+      EmailId: '',
+      Phonenumber: ''
     });
   }
 
   shipmentSearch() {
-
     this.sharedService.searchShipment = this.searchForm.value;
+    const filterObject = this.searchForm.value;
+    this.sharedService.shipmentDetails.Shipments.Shipment = this.sharedService.shipmentDetailsCopy.Shipments.Shipment.filter(shipment => {
+      return (
+        (filterObject.OrderNo === "" || shipment.OrderNo.toLowerCase().includes(filterObject.OrderNo.toLowerCase())) &&
+        (filterObject.ShipmentNo === "" || shipment.ShipmentNo.toLowerCase().includes(filterObject.ShipmentNo.toLowerCase())) &&
+        (filterObject.FirstName === "" || shipment.BillToAddress.FirstName.toLowerCase().includes(filterObject.FirstName.toLowerCase())) &&
+        (filterObject.LastName === "" || shipment.BillToAddress.LastName.toLowerCase().includes(filterObject.LastName.toLowerCase())) &&
+        (filterObject.EmailId === "" || shipment.BillToAddress.EmailID.toLowerCase().includes(filterObject.EmailId.toLowerCase())) &&
+        (filterObject.Phonenumber === "" || shipment.BillToAddress.Phonenumber.toLowerCase().includes(filterObject.Phonenumber.toLowerCase()))
+      );
+    });
+    this.sharedService.shipmentDetails.Shipments.TotalNumberOfRecords = String(this.sharedService.shipmentDetails.Shipments.Shipment.length);
+    console.log(this.sharedService.shipmentDetails, this.sharedService.shipmentDetailsCopy)
     this.router.navigate(['/shipment']);
   }
 

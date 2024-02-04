@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, Input } from '@angular/core';
 })
 export class DetailsComponent {
   @Input() shipmentdata: any;
-  constructor() { }
+  hide: boolean = true;
+  constructor(private datePipe: DatePipe) { }
 
   ngOnInit() {
-    console.log(this.shipmentdata)
+  }
+
+  hideInfo() {
+    this.hide = !this.hide;
   }
 }

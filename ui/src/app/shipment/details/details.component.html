@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <div class="details-section">
+        <div *ngIf='hide' class="details-section">
             <div class="vertical">
                 <div class="part-1">
                     <div class="packing-in-progress">
@@ -67,8 +67,49 @@
             <div class="horizontal">
                 <div class="info-div">
                     <div class="hide-show-info">
-                        <p>
+                        <p (click)="hideInfo()">
                             Hide info
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-details-section" *ngIf='!hide'>
+            <div class="showdiv">
+                <div class="part-1">
+                    <div class="packing-in-progress">
+                        <label>
+                            Packing in Progress
+                        </label>
+                    </div>
+                </div>
+                <div class="show-part-2">
+                    <div class="shipment-number">
+                        <label>
+                            Shipment number
+                        </label>
+                        <p>
+                            {{shipmentdata.ShipmentNo}}
+                        </p>
+                    </div>
+                    <div class="expected-ship-date bottom">
+                        <label>Expected ship date</label>
+                        <p>{{shipmentdata.ExpectedShipmentDate}}</p>
+                    </div>
+                    <div class="shipment-number">
+                        <label>
+                            Ship to
+                        </label>
+                        <p>{{shipmentdata.ToAddress.City}}, {{shipmentdata.ToAddress.State}},
+                            {{shipmentdata.ToAddress.ZipCode}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal">
+                <div class="info-div">
+                    <div class="hide-show-info">
+                        <p (click)="hideInfo()">
+                            show info
                         </p>
                     </div>
                 </div>

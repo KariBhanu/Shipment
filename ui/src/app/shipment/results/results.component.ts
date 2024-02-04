@@ -1,4 +1,6 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { SharedService } from '../../sharedservice.service';
 
 @Component({
   selector: 'app-results',
@@ -10,12 +12,11 @@ export class ResultsComponent {
   @Output() shipmentdata = new EventEmitter();
 
   shipments: any;
-
-
-  constructor() { }
+  constructor(private datePipe: DatePipe, public sharedService: SharedService) {
+    this.shipments = this.sharedService.shipmentDetails.Shipments.Shipment;
+  }
 
   ngOnInit() {
-    this.shipments = this.shipmentDetails.Shipments.Shipment;
   }
   summary(data: any) {
     this.shipmentdata.emit(data);

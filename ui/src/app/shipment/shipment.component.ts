@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../sharedservice.service';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-shipment',
@@ -155,17 +157,27 @@ export class ShipmentComponent implements OnInit {
     }
   }
 
-  constructor(private route: ActivatedRoute, private sharedService: SharedService) { }
+  constructor(private route: ActivatedRoute, private sharedService: SharedService, private router: Router, private datePipe: DatePipe) { }
 
   ngOnInit() {
-    // Retrieve the parameters from the route
-    console.log(this.sharedService.searchShipment)
-    console.log(this.shipmentDetails);
   }
 
   shipmentCame(data: any) {
     this.title = "Shipment Summary";
     this.pageBool = false;
     this.shipmentData = data;
+  }
+
+  goBack() {
+    if (this.pageBool) {
+      this.router.navigate(['/home']);
+    } else {
+      this.title = "Shipment Search Results";
+      this.pageBool = true;
+    }
+  }
+
+  close() {
+    this.router.navigate(['/home']);
   }
 }
