@@ -10,6 +10,12 @@
     float: right;
     height:1.3rem;
 }
+.hide-show-info p{
+    cursor: pointer;
+    color:#20a8d8;
+    font-weight: bold;
+}
+
 
 .product-heading {
     color: #20a8d8;
@@ -54,7 +60,7 @@
 .vertical {
     display: flex;
     justify-content: space-between;
-    height: 17rem;
+    height: 18rem;
     width: 50rem;
 }
 
@@ -82,4 +88,12 @@
 
 label{
     color: grey;
+}
+
+.products-main-div{
+    margin-top: 10px;
+}
+
+.vertical-options p{
+    color: black;
 }

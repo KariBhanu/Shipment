@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
   shipmentSearch() {
 
     this.sharedService.searchShipment = this.searchForm.value;
-    this.router.navigate(['/shipment'], { queryParams: { search: true } });
+    this.router.navigate(['/shipment']);
   }
 
 }

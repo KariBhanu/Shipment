@@ -21,7 +21,7 @@
                             Carrier
                         </label>
                         <p>
-                            {{shipmentdata.ScacAndService}}
+                            {{shipmentdata.ScacAndService ? shipmentdata.ScacAndService:'-'}}
                         </p>
                     </div>
                     <div class="shipment-number">
@@ -51,14 +51,16 @@
                     <div class="customer-info bottom">
                         <label>Customer info</label>
                         <p>{{shipmentdata.BillToAddress.FirstName}} {{shipmentdata.BillToAddress.LastName}}</p>
-                        <p>{{shipmentdata.BillToAddress.DayPhone}}</p>
-                        <p>{{shipmentdata.BillToAddress.EMailID}}</p>
+                        <p>{{shipmentdata.BillToAddress.Phonenumber}}</p>
+                        <p>{{shipmentdata.BillToAddress.EmailID}}</p>
                     </div>
                     <div class="Bill to bottom">
                         <label>Bill to</label>
                         <p>{{shipmentdata.BillToAddress.FirstName}} {{shipmentdata.BillToAddress.LastName}}</p>
-                        <p>{{shipmentdata.BillToAddress.DayPhone}}</p>
-                        <p>{{shipmentdata.BillToAddress.EMailID}}</p>
+                        <p>{{shipmentdata.BillToAddress.AddressLine1}}</p>
+                        <p>{{shipmentdata.BillToAddress.City}}, {{shipmentdata.BillToAddress.State}},
+                            {{shipmentdata.BillToAddress.ZipCode}}</p>
+                        <p>{{shipmentdata.BillToAddress.Country}}</p>
                     </div>
                 </div>
             </div>
@@ -75,46 +77,23 @@
         <div class="products-main-div">
             <div class="product-heading">
                 <h5>
-                    Products (3)
+                    Products ({{shipmentdata.ShipmentLines.TotalNumberOfRecords}})
                 </h5>
                 <div class="horizontal-line">
 
                 </div>
                 <div class="products">
-                    <div class="prods prod-1">
+                    {{shipmentdata.ShipmentLines.shipmentLine}}
+                    <div class="prods prod-1" *ngFor="let product of shipmentdata.ShipmentLines.ShipmentLine">
                         <div class="horizontal-div">
                             <img alt="P1 Image">
+                            <!-- <img src='{{product.OrderLine.ItemDetails.ImageUrl}}' alt="P1 Image"> -->
                             <div class="vertical-options">
-
-                                <h5>iRobot Roomba 980 VC</h5>
-                                <p>Product ID: 1000900</p>
-                                <p>Quantity: 1 Each</p>
+                                <h5>{{product.OrderLine.ItemDetails.Description}}</h5>
+                                <p>Product ID: {{product.OrderLine.ItemDetails.ItemID}}</p>
+                                <p>Quantity: {{product.Quantity}} {{product.OrderLine.ItemDetails.DisplayUnitOfMeasure}}
+                                </p>
                             </div>
-                        </div>
-
-                    </div>
-                    <div class="prods prod-2">
-                        <div class="horizontal-div">
-
-                            <img alt="P2 Image">
-                            <div class="vertical-options">
-
-                                <h5>Hunter Regalia</h5>
-                                <p>Product ID: 1000900</p>
-                                <p>Quantity: 1 Each</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="prods prod-2">
-                        <div class="horizontal-div">
-
-                            <img alt="P2 Image">
-                            <div class="vertical-options">
-                                <h5>Frigidaire WIndow Ac</h5>
-                                <p>Product ID: 1000900</p>
-                                <p>Quantity: 1 Each</p>
-                            </div>
-
                         </div>
                     </div>
                 </div>
