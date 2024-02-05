@@ -50,13 +50,19 @@
                         <p>{{data.ShipmentLines.TotalNumberOfRecords}} Products</p>
                         <p>Carrier: {{data.ScacAndService ? data.ScacAndService:'-'}}</p>
                         <p>Shipment # <span class="shipment-id">{{data.ShipmentNo}}</span></p>
+                        <div class="list-card cust-info">
+                            <p>Customer Info</p>
+                            <p>{{data.BillToAddress.FirstName}} {{data.BillToAddress.LastName}}</p>
+                            <p>{{data.BillToAddress.Phonenumber}}</p>
+                            <p>{{data.BillToAddress.EmailID}}</p>
+                        </div>
                     </div>
                     <div class="list-card">
                         <p class="status">{{data.Status}}</p>
                         <p>Assigned to: {{data.AssignedToUserId}}</p>
                         <p>Expected pickup date: {{data.ExpectedShipmentDate}}</p>
                     </div>
-                    <div class="list-card">
+                    <div class="list-card cust-info-2">
                         <p>Customer Info</p>
                         <p>{{data.BillToAddress.FirstName}} {{data.BillToAddress.LastName}}</p>
                         <p>{{data.BillToAddress.Phonenumber}}</p>

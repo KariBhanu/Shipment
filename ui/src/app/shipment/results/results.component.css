@@ -4,7 +4,6 @@
 }
 
 .shipment-card {
-    height: 8rem;
     transition: 0.3s all ease;
     cursor: pointer;
 }
@@ -73,7 +72,7 @@
 .filter-modal-main {
     border: 1px solid rgba(128, 128, 128, 0.362);
     background-color: white;
-    width: 30rem;
+    width: 18rem;
     position: absolute;
     z-index: 1000;
     display: inline-block;
@@ -81,7 +80,7 @@
 
 .dropdown {
     position: relative;
-    right: 28rem;
+    right: 17rem;
 }
 
 .modal-header {
@@ -129,4 +128,30 @@
 
 .hr {
     margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+.cust-info {
+    display: none;
+}
+
+.cust-info-2 {
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    .cust-info {
+        display: block;
+    }
+
+    .cust-info-2 {
+        display: none;
+    }
 }

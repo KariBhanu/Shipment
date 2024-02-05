@@ -96,7 +96,7 @@
                         <label>Expected ship date</label>
                         <p>{{shipmentdata.ExpectedShipmentDate}}</p>
                     </div>
-                    <div class="shipment-number">
+                    <div class="shipment-number ship-to">
                         <label>
                             Ship to
                         </label>
@@ -120,25 +120,26 @@
                 <h5>
                     Products ({{shipmentdata.ShipmentLines.TotalNumberOfRecords}})
                 </h5>
-                <div class="horizontal-line">
+            </div>
+            <div class="horizontal-line">
 
-                </div>
-                <div class="products">
-                    {{shipmentdata.ShipmentLines.shipmentLine}}
-                    <div class="prods prod-1" *ngFor="let product of shipmentdata.ShipmentLines.ShipmentLine">
-                        <div class="horizontal-div">
-                            <!-- <img src="../../../assets/pic.jpg" alt=""> -->
-                            <img src='{{product.OrderLine.ItemDetails.ImageUrl}}' alt="P1 Image">
-                            <div class="vertical-options">
-                                <h5>{{product.OrderLine.ItemDetails.Description}}</h5>
-                                <p>Product ID: {{product.OrderLine.ItemDetails.ItemID}}</p>
-                                <p>Quantity: {{product.Quantity}} {{product.OrderLine.ItemDetails.DisplayUnitOfMeasure}}
-                                </p>
-                            </div>
+            </div>
+            <div class="products">
+                {{shipmentdata.ShipmentLines.shipmentLine}}
+                <div class="prods prod-1" *ngFor="let product of shipmentdata.ShipmentLines.ShipmentLine">
+                    <div class="horizontal-div">
+                        <!-- <img src="../../../assets/pic.jpg" alt=""> -->
+                        <img src='{{product.OrderLine.ItemDetails.ImageUrl}}' alt="P1 Image">
+                        <div class="vertical-options">
+                            <h5>{{product.OrderLine.ItemDetails.Description}}</h5>
+                            <p>Product ID: {{product.OrderLine.ItemDetails.ItemID}}</p>
+                            <p>Quantity: {{product.Quantity}} {{product.OrderLine.ItemDetails.DisplayUnitOfMeasure}}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
