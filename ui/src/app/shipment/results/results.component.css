@@ -146,6 +146,16 @@
     display: block;
 }
 
+.check{
+    position: relative;
+        right: 7px;
+        top: 5px;
+}
+ input[type="checkbox"] {
+     background-color: #20a8d8 !important;
+     color: white;
+ }
+
 @media screen and (max-width: 480px) {
     .cust-info {
         display: block;
