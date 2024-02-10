@@ -76,9 +76,9 @@ export class ResultsComponent {
   applyFilter() {
     this.closeFilterModal();
     if (this.checkedArray.length === 0) {
-      this.shipments = this.sharedService.shipmentDetails.Shipments.Shipment;
+      this.shipments = this.getShipments();
     } else {
-      this.shipments = this.sharedService.shipmentDetails.Shipments.Shipment.filter((shipment: any) => {
+      this.shipments = this.shipments.filter((shipment: any) => {
         return this.checkedArray.some(criteria => criteria.value === shipment.Status);
       });
     }
