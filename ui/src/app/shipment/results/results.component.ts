@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, Output, EventEmitter, ViewChildren } from '@angular/core';
 import { SharedService } from '../../sharedservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -8,11 +9,10 @@ import { SharedService } from '../../sharedservice.service';
   styleUrl: './results.component.css'
 })
 export class ResultsComponent {
-  @Input() shipmentDetails: any;
-  @Output() shipmentdata = new EventEmitter();
+  // @Input() shipmentDetails: any;
+  // @Output() shipmentdata = new EventEmitter();
   @ViewChildren('filterCheckbox') filterCheckbox: any;
-  resultCount:any;
-
+  resultsCount: any;
   isFilterModalOpen: boolean = false;
   statuses = [
     { 'label': 'Ready for Backroom Pick', 'value': 'Ready for Backroom Pick' },
@@ -28,14 +28,22 @@ export class ResultsComponent {
   checkedArray: any[] = []
 
   shipments: any;
-  constructor(private datePipe: DatePipe, public sharedService: SharedService) {
-    this.shipments = this.sharedService.shipmentDetails.Shipments.Shipment;
+  constructor(private router: Router, public sharedService: SharedService) {
+    //this.shipments = this.sharedService.shipmentDetails.Shipments.Shipment;
   }
 
   ngOnInit() {
+    this.getShipments();
   }
   summary(data: any) {
-    this.shipmentdata.emit(data);
+    //this.shipmentdata.emit(data);
+    this.sharedService.selectedShipment = data;
+    const body = {
+      shipment_no: data.ShipmentKey
+    }
+    this.router.navigate(['/shipment', 'details'], { queryParams: body });
+    this.sharedService.title = "Shipment Summary";
+    this.sharedService.shipmentID = data.OrderNo;
   }
 
   openFilterModal() {
@@ -74,6 +82,7 @@ export class ResultsComponent {
         return this.checkedArray.some(criteria => criteria.value === shipment.Status);
       });
     }
+    this.resultsCount = this.shipments.length;
   }
 
   resetFilters() {
@@ -82,4 +91,13 @@ export class ResultsComponent {
     });
     this.checkedArray = [];
   }
+
+  getShipments(): void {
+    this.sharedService.getShipments()
+      .subscribe((data: any) => {
+        this.shipments = this.sharedService.filterShipments(data);
+        this.resultsCount = this.shipments.length;
+      });
+  }
+
 }

@@ -5,13 +5,15 @@ import { ShipmentRoutingModule } from './shipment-routing.module';
 import { ShipmentComponent } from './shipment.component';
 import { ResultsComponent } from './results/results.component';
 import { DetailsComponent } from './details/details.component';
+import { FormatDatePipe } from '../format-date.pipe';
 
 
 @NgModule({
   declarations: [
     ShipmentComponent,
     ResultsComponent,
-    DetailsComponent
+    DetailsComponent,
+    FormatDatePipe
   ],
   imports: [
     CommonModule,

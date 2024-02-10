@@ -2,7 +2,7 @@
     <div class="card-body">
         <div class="filter-wrapper">
             <div class="results-count">
-                <h1 class="count">{{shipments.length}}</h1>
+                <h1 class="count">{{resultsCount}}</h1>
                 <span>results</span>
             </div>
             <div class="filter-icon-div">
@@ -43,12 +43,12 @@
 
         <hr>
         <div class="results-list">
-            <div *ngFor="let data of shipments" class="card shipment-card" (click)="summary(data)">
+            <div *ngFor="let data of shipments | formatDate" class="card shipment-card" (click)="summary(data)">
                 <div class="card-body card-wrapper">
                     <div class="list-card">
                         <h6>{{data.OrderNo}}</h6>
                         <p>{{data.ShipmentLines.TotalNumberOfRecords}} Products</p>
-                        <p>Carrier: {{data.ScacAndService ? data.ScacAndService:'-'}}</p>
+                        <p *ngIf="data.DeliveryMethod === 'SHP'">Carrier: {{data.ScacAndService ? data.ScacAndService:'-'}}</p>
                         <p>Shipment # <span class="shipment-id">{{data.ShipmentNo}}</span></p>
                         <div class="list-card cust-info">
                             <p>Customer Info</p>
