@@ -67,7 +67,6 @@ export class ResultsComponent {
     });
     if (isPresent !== -1) {
       this.checkedArray.splice(isPresent, 1);
-
     } else {
       this.checkedArray.push(status);
     }

@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SharedService {
-  shipmentDetails: any;
-  shipmentDetailsCopy: any;
-  resultsCount: any;
+  //shipmentDetails: any;
+  //shipmentDetailsCopy: any;
+  //resultsCount: any;
   jsonDataUrl: any = "assets/shipments.json";
   searchShipment: any;
   selectedShipment:any;

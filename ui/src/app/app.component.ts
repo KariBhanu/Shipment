@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SharedService } from './sharedservice.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,18 +8,18 @@ import { SharedService } from './sharedservice.service';
 })
 export class AppComponent {
 
-  constructor(private sharedService: SharedService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getShipments();
+    //this.getShipments();
   }
 
-  getShipments(): void {
-    this.sharedService.getShipments()
-      .subscribe((data: any) => {
-        this.sharedService.shipmentDetails = data;
-        this.sharedService.shipmentDetails = data;
-        this.sharedService.resultsCount = data.Shipments.Shipment.length;
-      });
-  }
+  // getShipments(): void {
+  //   this.sharedService.getShipments()
+  //     .subscribe((data: any) => {
+  //       this.sharedService.shipmentDetails = data;
+  //       //this.sharedService.shipmentDetails = data;
+  //       this.sharedService.resultsCount = data.Shipments.Shipment.length;
+  //     });
+  // }
 }
