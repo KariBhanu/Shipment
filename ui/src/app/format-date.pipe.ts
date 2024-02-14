@@ -19,6 +19,22 @@ export class FormatDatePipe implements PipeTransform {
           obj.ExpectedShipmentDate = dateObj.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
         }
       }
+      if (obj.BillToAddress.EmailID){
+        if (obj.BillToAddress.EmailID.includes('.')){
+          const temp = obj.BillToAddress.EmailID.split('@');
+          let firstHalf = "";
+          for (let i = 0; i < temp[0].length - 1; i++) {
+            firstHalf += "*";
+          }
+          let secondHalf = "";
+          const temp2 = temp[1].split('.');
+          for (let i = 0; i < temp2[0].length - 1; i++) {
+            secondHalf += "*";
+          }
+          let f = obj.BillToAddress.EmailID[0];
+          obj.BillToAddress.EmailID = f + firstHalf + '@' + secondHalf + "*com";
+        }
+      }
       return obj;
     });
   }
